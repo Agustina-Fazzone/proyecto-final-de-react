@@ -8,7 +8,11 @@ const RouterApp = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/chat" element={<Messages />} />
+        <Route path="/chat" element={
+          <ProtectedRoute>
+            <Messages />
+          </ProtectedRoute>}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
