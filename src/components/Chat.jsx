@@ -90,6 +90,7 @@ export default function Chat() {
               {user.lastSeen !== "" && <span className="last-seen">Last seen: {user.lastSeen}</span>}
             </div>
           </div>
+
           <div className="chat-actions">
             <button title="Camera">📷</button>
             <button title="Gallery">🖼️</button>
