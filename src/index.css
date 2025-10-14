@@ -1,3 +1,4 @@
+/*  RESETEO GENERAL */
 * {
   margin: 0;
   padding: 0;
@@ -5,24 +6,35 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/*  LAYOUT PRINCIPAL  */
 .app {
   display: flex;
   height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* SIDEBAR  */
 .sidebar {
   width: 250px;
   background-color: #f5f5f5;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
+}
 
+body.dark .sidebar {
+  background-color: #1f1f1f;
+  border-right: 1px solid #444;
+  color: #fff;
 }
 
 .search {
   padding: 10px;
   border: none;
   border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  color: #000;
 }
 
 .search-result {
@@ -31,8 +43,13 @@
   color: gray;
 }
 
-/* user list */
+body.dark .search {
+  background-color: #333;
+  border-bottom: 1px solid #555;
+  color: #fff;
+}
 
+/*  USER LIST  */
 .user-list {
   list-style: none;
   padding: 5px;
@@ -49,10 +66,19 @@
   width: 100%;
   border-radius: 20px;
   border: 1px solid #eee;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .user:hover {
   background-color: #eee;
+}
+
+body.dark .user {
+  border: 1px solid #555;
+}
+
+body.dark .user:hover {
+  background-color: #333;
 }
 
 .user-info {
@@ -65,6 +91,10 @@
   font-size: 13px;
 }
 
+body.dark .user-info small {
+  color: #ccc;
+}
+
 .avatar {
   width: 40px;
   border-radius: 50%;
@@ -72,12 +102,16 @@
   border: 2px solid #ddd;
 }
 
-/* end user list */
+body.dark .avatar {
+  border: 2px solid #555;
+}
 
+/*  CHAT  */
 .chat {
   flex: 1;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .user-not-found {
@@ -88,15 +122,19 @@
 }
 
 .chat-header {
-
   padding: 12px 15px;
   border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  background-color: var(--header-bg);
-  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .chat-header {
+  background-color: #222;
+  border-bottom: 1px solid #444;
+  color: #fff;
 }
 
 .chat-user {
@@ -121,16 +159,14 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
-}
-
-.chat-messages {
-  background-color: violet;
+  color: inherit;
 }
 
 .chat-messages {
   flex: 1;
   padding: 15px;
   background-color: #fafafa;
+  transition: background-color 0.3s, color 0.3s;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -151,12 +187,7 @@
   color: #979797;
 }
 
-.chat-footer {
-  display: flex;
-  padding: 10px;
-  border-top: 1px solid #ddd;
-  gap: 10px;
-}
+
 
 .chat-footer form {
   display: flex;
@@ -164,10 +195,52 @@
   gap: 10px;
 }
 
+
+
+.chat-footer button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body.dark .chat-messages {
+  background-color: #181818;
+  color: #fff;
+}
+
+.chat-messages span {
+  font-size: 10px;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  gap: 10px;
+  background-color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .chat-footer {
+  background-color: #222;
+  border-top: 1px solid #444;
+}
+
 .chat-footer input {
   flex: 1;
   padding: 10px;
   border: 1px solid #ddd;
+  color: #000;
+  background-color: #fff;
+}
+
+body.dark .chat-footer input {
+  border: 1px solid #555;
+  color: #fff;
+  background-color: #333;
 }
 
 .chat-footer button {
@@ -179,8 +252,7 @@
   cursor: pointer;
 }
 
-
-/* Login page */
+/*  LOGIN PAGE  */
 .login-main {
   height: 100vh;
   display: flex;
@@ -189,6 +261,11 @@
   align-items: center;
   background: linear-gradient(135deg, #159f30, #00c6ff);
   color: white;
+  transition: background 0.3s;
+}
+
+body.dark .login-main {
+  background: linear-gradient(135deg, #0b4e15, #004c66);
 }
 
 .login-main img {
@@ -210,6 +287,13 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .login-main form {
+  background-color: #1f1f1f;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
 }
 
 .login-main form label {
@@ -219,6 +303,10 @@
   text-align: center;
 }
 
+body.dark .login-main form label {
+  color: #ddd;
+}
+
 .login-main form input {
   padding: 10px;
   border: 1px solid #ddd;
@@ -226,9 +314,10 @@
   font-size: 14px;
 }
 
-.login-main form input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+body.dark .login-main form input {
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
 }
 
 .login-main form button {
@@ -242,47 +331,84 @@
   transition: background-color 0.3s;
 }
 
-form button:hover {
+.login-main form button:hover {
   background-color: #0056b3;
 }
 
-p {
-  margin: 0;
-  font-size: 13px;
-}
-
-form .text-info {
-  margin-top: 10px;
-  font-size: 13px;
-}
-
-
-.cont-popup {
-  background-color: rgba(33, 33, 33, 0.261);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(2px);
-}
-
+/*  POPUP  */
 .popup {
-  background-color: whitesmoke;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 10px;
-  width: 60%;
-  box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.205);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.popup button {
-  padding: 3px 12px;
-  background-color: rgb(136, 163, 163);
-  border: 1px solid rgb(201, 201, 201);
-  border-radius: 10px;
-  color: white;
+.popup.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.popup.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.config-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.toggle-theme {
+  padding: 10px;
   margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.close-popup {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+/* THEME GENERAL  */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/*  BOTONES  */
+button {
+  background-color: #eeeeee;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+body.dark button {
+  background-color: #333333;
+  color: white;
 }
 
 .help-container {
@@ -337,6 +463,8 @@ form .text-info {
 .help-back-button:hover {
   background-color: #0056b3;
 }
+
+
 
 
 /* Resposive mínimo para mobile */

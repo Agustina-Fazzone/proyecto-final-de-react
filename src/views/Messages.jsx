@@ -1,19 +1,16 @@
 import Chat from "../components/Chat"
 import Sidebar from "../components/Sidebar"
-import { ChatProvider } from "../context/ChatContext"
+import { useChat } from "../context/ChatContext.jsx"
 
+export default function Message() {
+  const { selectedUser } = useChat();
 
-
-const Messages = () => {
   return (
-    <ChatProvider>
-      <div className="app">
-        <Sidebar />
-        <Chat />
-      </div>
-    </ChatProvider>
-  )
-}
+    <div className={`app ${selectedUser ? "has-selection" : ""}`}>
+      <Sidebar />
+      <Chat />
+    </div>
+  );
 
-export { Messages }
+}
 
