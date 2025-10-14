@@ -36,7 +36,6 @@ La aplicación está segmentada en cuatro componentes clave que dirigen la exper
 
 * **Propósito:** Personalización de la experiencia y la interfaz.
 * **Opciones Disponibles:**
-    * **Idioma:** Alterna el idioma de la interfaz (p. ej., Español / Inglés).
     * **Ahorro de Energía:** Activa un modo visual de baja luminosidad (**Dark Mode**) optimizando la eficiencia energética y la ergonomía visual.
 
 ---
