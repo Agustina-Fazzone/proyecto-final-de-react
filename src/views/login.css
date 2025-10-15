@@ -1,0 +1,94 @@
+/* ---------------- LOGIN PAGE ---------------- */
+.login-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #159f30, #00c6ff);
+  color: white;
+  transition: background 0.3s;
+}
+
+body.dark .login-main {
+  background: linear-gradient(135deg, #0b4e15, #004c66);
+}
+
+.login-main img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.login-main h1 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.login-main form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .login-main form {
+  background-color: #1f1f1f;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+.login-main form label {
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(66, 66, 66);
+  text-align: center;
+}
+
+body.dark .login-main form label {
+  color: #ddd;
+}
+
+.login-main form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+body.dark .login-main form input {
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
+}
+
+.login-main form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-main form button:hover {
+  background-color: #0056b3;
+}
+
+/* ---------------- LOGIN RESPONSIVE ---------------- */
+@media (max-width: 480px) {
+  .login-main h1 {
+    font-size: 22px;
+  }
+
+  .login-main form {
+    width: 90%;
+    padding: 20px;
+  }
+}
