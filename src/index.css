@@ -1,4 +1,4 @@
-/*  RESETEO GENERAL */
+/* ---------------- RESETEO GENERAL ---------------- */
 * {
   margin: 0;
   padding: 0;
@@ -6,15 +6,16 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/*  LAYOUT PRINCIPAL  */
+/* ---------------- LAYOUT PRINCIPAL ---------------- */
 .app {
   display: flex;
   height: 100vh;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* SIDEBAR  */
+/* ---------------- SIDEBAR ---------------- */
 .sidebar {
+  position: relative;
   width: 250px;
   background-color: #f5f5f5;
   border-right: 1px solid #ddd;
@@ -37,19 +38,19 @@ body.dark .sidebar {
   color: #000;
 }
 
-.search-result {
-  text-align: center;
-  margin-top: 10px;
-  color: gray;
-}
-
 body.dark .search {
   background-color: #333;
   border-bottom: 1px solid #555;
   color: #fff;
 }
 
-/*  USER LIST  */
+.search-result {
+  text-align: center;
+  margin-top: 10px;
+  color: gray;
+}
+
+/* ---------------- USER LIST ---------------- */
 .user-list {
   list-style: none;
   padding: 5px;
@@ -106,10 +107,9 @@ body.dark .avatar {
   border: 2px solid #555;
 }
 
-/*  CHAT  */
+/* ---------------- CHAT ---------------- */
 .chat {
   flex: 1;
-
   display: flex;
   flex-direction: column;
   transition: background-color 0.3s, color 0.3s;
@@ -173,6 +173,11 @@ body.dark .chat-header {
   gap: 10px;
 }
 
+body.dark .chat-messages {
+  background-color: #181818;
+  color: #fff;
+}
+
 .message {
   background-color: rgb(206, 246, 255);
   padding: 5px 10px;
@@ -188,34 +193,6 @@ body.dark .chat-header {
   color: #979797;
 }
 
-
-
-.chat-footer form {
-  display: flex;
-  flex: 1;
-  gap: 10px;
-}
-
-
-
-.chat-footer button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-body.dark .chat-messages {
-  background-color: #181818;
-  color: #fff;
-}
-
-.chat-messages span {
-  font-size: 10px;
-}
-
 .chat-footer {
   display: flex;
   padding: 10px;
@@ -228,6 +205,12 @@ body.dark .chat-messages {
 body.dark .chat-footer {
   background-color: #222;
   border-top: 1px solid #444;
+}
+
+.chat-footer form {
+  display: flex;
+  flex: 1;
+  gap: 10px;
 }
 
 .chat-footer input {
@@ -253,7 +236,7 @@ body.dark .chat-footer input {
   cursor: pointer;
 }
 
-/*  LOGIN PAGE  */
+/* ---------------- LOGIN PAGE ---------------- */
 .login-main {
   height: 100vh;
   display: flex;
@@ -336,27 +319,34 @@ body.dark .login-main form input {
   background-color: #0056b3;
 }
 
-/*  POPUP  */
+/* ---------------- POPUP MODERNO ---------------- */
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) scale(0.95);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   z-index: 1000;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.25s, opacity 0.25s;
+  opacity: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .popup.light {
-  background-color: #fff;
-  color: #000;
+  background-color: #ffffff;
+  color: #222;
 }
 
 .popup.dark {
-  background-color: #333;
-  color: #fff;
+  background-color: #2c2c2c;
+  color: #f1f1f1;
 }
 
 .config-button {
@@ -365,41 +355,111 @@ body.dark .login-main form input {
   font-size: 20px;
   cursor: pointer;
   color: inherit;
+  transition: transform 0.2s, color 0.2s;
+}
+
+
+
+
+.config-button:hover {
+  transform: rotate(15deg);
+  color: #007bff;
+}
+
+
+
+.toggle-theme,
+.close-popup {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
 }
 
 .toggle-theme {
-  padding: 10px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
   background-color: #007bff;
-  color: white;
+  color: #fff;
+}
+
+.toggle-theme:hover {
+  background-color: #0056b3;
+}
+
+body.dark .toggle-theme {
+  background-color: #3390ff;
+}
+
+body.dark .toggle-theme:hover {
+  background-color: #0066cc;
 }
 
 .close-popup {
-  padding: 10px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
   background-color: #ccc;
+  color: #222;
 }
 
-/* THEME GENERAL  */
+body.dark .close-popup {
+  background-color: #555;
+  color: #f1f1f1;
+}
+
+.close-popup:hover {
+  background-color: #999;
+}
+
+/* Selector de idioma */
+.language-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.language-selector label {
+  font-weight: 500;
+}
+
+.language-selector select {
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #fff;
+  color: #222;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+body.dark .language-selector select {
+  background-color: #444;
+  color: #f1f1f1;
+  border: 1px solid #aaa;
+}
+
+.language-selector select:hover {
+  border-color: #555;
+}
+
+/* ---------------- THEME GENERAL ---------------- */
 body.light {
-  background-color: #ffffff;
-  color: #000000;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: #f5f5f5;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
 }
 
 body.dark {
-  background-color: #121212;
-  color: #ffffff;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  transition: background 0.3s, color 0.3s;
 }
 
-/*  BOTONES  */
+/* ---------------- BOTONES ---------------- */
 button {
   background-color: #eeeeee;
   border: none;
@@ -412,6 +472,7 @@ body.dark button {
   color: white;
 }
 
+/* ---------------- HELP CONTAINER ---------------- */
 .help-container {
   max-width: 800px;
   margin: 0 auto;
@@ -465,10 +526,7 @@ body.dark button {
   background-color: #0056b3;
 }
 
-
-
-
-/* Resposive mínimo para mobile */
+/* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 480px) {
 
   .app {
@@ -503,7 +561,6 @@ body.dark button {
     width: 35px;
     margin-bottom: 5px;
   }
-
 
   .chat-header {
     flex-direction: column;

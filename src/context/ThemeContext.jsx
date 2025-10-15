@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+
 
 export const ThemeContext = createContext(); // 👈 exportación nombrada
 
@@ -19,5 +20,5 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-
+export const useTheme = () => useContext(ThemeContext);
 

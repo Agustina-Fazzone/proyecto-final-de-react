@@ -4,12 +4,15 @@ import { RouterApp } from './router/RouterApp.jsx';
 import './index.css';
 import { ChatProvider } from './context/ChatContext.jsx';
 import { ThemeProvider } from "./context/ThemeContext";
+import { LanguageProvider } from "./context/LanguageContext";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ChatProvider>
       <ThemeProvider>
-        <RouterApp />
+        <LanguageProvider>
+          <RouterApp />
+        </LanguageProvider>
       </ThemeProvider>
     </ChatProvider>
   </StrictMode>

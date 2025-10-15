@@ -4,15 +4,13 @@ const ChatContext = createContext()
 
 const ChatProvider = ({ children }) => {
   // 1. Estado de usuarios
-  // Inicializamos vacío; luego lo cargamos de localStorage o mock
+
   const [users, setUsers] = useState([])
 
   // 2. Estado del usuario seleccionado
   const [selectedUser, setSelectedUser] = useState(null)
 
-  // 3. Al montar el Provider, revisamos si hay usuarios guardados en localStorage
-  //    - Si existen, los usamos
-  //    - Si no existen, cargamos los mock iniciales
+
   useEffect(() => {
     const storedUsers = localStorage.getItem("users")
 
