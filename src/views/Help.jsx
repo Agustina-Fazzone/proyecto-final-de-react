@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import "../views/Help.css"
+import "../views/help.css"
 
 const Help = () => {
   return (
