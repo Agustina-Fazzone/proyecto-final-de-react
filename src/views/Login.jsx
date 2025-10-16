@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import logo from "../assets/logo.png"
 import { Link, useNavigate } from "react-router-dom"
-import "../views/Login.css"
+import "../views/login.css"
 const Login = () => {
   const [password, setPassword] = useState()
   const [message, setMessage] = useState()
